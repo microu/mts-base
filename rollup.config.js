@@ -1,19 +1,19 @@
-import { defineConfig, RollupOptions, Plugin } from "rollup";
+import { defineConfig} from "rollup";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import copy from "rollup-plugin-copy";
 import del from "rollup-plugin-delete";
 
-const moduleList = [{ name: "random" }, {name: "collections"},{ name: "main" }];
+const moduleList = [{ name: "random" }, { name: "collections" }, { name: "main" }];
 
-function buildconfig(moduleList: { name: String }[]) {
-  const rollupSteps = [] as RollupOptions[];
+function buildconfig(moduleList) {
+  const rollupSteps = [];
 
   for (let i = 0; i < moduleList.length; i += 1) {
     const module = moduleList[i];
 
     // typescript => js step
-    const tsStep: RollupOptions = {
+    const tsStep = {
       input: `src/${module.name}/index.ts`,
       output: {
         file: `build/${module.name}/index.js`,
@@ -21,14 +21,14 @@ function buildconfig(moduleList: { name: String }[]) {
       },
       plugins: [typescript({ tsconfig: `tsconfig.compile-${module.name}.json` })],
     };
-    // if (i == 0) {
-    //   (tsStep.plugins as Plugin[]).push(
-    //     del({ targets: ["build/**/*", "dist/**/*"], runOnce: true })
-    //   );
-    // }
+    if (i == 0) {
+      tsStep.plugins.push(
+        del({ targets: ["build/**/*", "dist/**/*"], runOnce: true })
+      );
+    }
 
     // declarationStep
-    const dtsStep: RollupOptions = {
+    const dtsStep = {
       input: `build/${module.name}/index.js`,
       output: {
         dir: "dist",
@@ -40,7 +40,7 @@ function buildconfig(moduleList: { name: String }[]) {
     };
 
     if (i < moduleList.length - 1) {
-      (dtsStep.plugins as Plugin[]).push(
+      dtsStep.plugins.push(
         copy({
           hook: "writeBundle",
           targets: [
@@ -62,7 +62,7 @@ function buildconfig(moduleList: { name: String }[]) {
         })
       );
     } else {
-      (dtsStep.plugins as Plugin[]).push(
+      dtsStep.plugins.push(
         copy({
           targets: [{ src: `build/${module.name}/index.js`, dest: "dist/" }],
         })

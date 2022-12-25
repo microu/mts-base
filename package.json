@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "rollup -c rollup.config.ts --configPlugin typescript"
+    "build": "rollup -c rollup.config.js"
   },
   "author": "Microu",
   "license": "MIT",
