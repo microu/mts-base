@@ -4,7 +4,7 @@ import dts from "rollup-plugin-dts";
 import copy from "rollup-plugin-copy";
 import del from "rollup-plugin-delete";
 
-const moduleList = [{ name: "random" }, { name: "main" }];
+const moduleList = [{ name: "random" }, {name: "collections"},{ name: "main" }];
 
 function buildconfig(moduleList: { name: String }[]) {
   const rollupSteps = [] as RollupOptions[];
