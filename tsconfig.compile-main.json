@@ -1,0 +1,8 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "rootDir": "src/main",
+        "outDir": "build/main",
+        "declaration": true,
+    }
+}
