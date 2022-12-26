@@ -1,5 +1,5 @@
 // version.ts
-const VERSION = "0.1.8";
+const VERSION = "0.1.9";
 
 function characterList(firstChar, n, asArray = false) {
     const arr = Array.from(new Array(n), (_, i) => String.fromCharCode(firstChar.charCodeAt(0) + i));

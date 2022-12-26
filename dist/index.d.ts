@@ -1,4 +1,4 @@
-declare const VERSION = "0.1.8";
+declare const VERSION = "0.1.9";
 
 declare function characterList(firstChar: string, n: number): string;
 declare function characterList(firstChar: string, n: number, asArray: false): string;
