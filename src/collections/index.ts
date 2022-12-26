@@ -1,2 +1,2 @@
-export * from "./linkedList"
-export * from "./orderedMap"
+export * from "./linkedList.js"
+export * from "./orderedMap.js"

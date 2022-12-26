@@ -1,4 +1,4 @@
-import { characterList } from "./stringUtils";
+import { characterList } from "./stringUtils.js";
 
 export const alphabet = characterList("a", 26);
 export const ALPHABET = characterList("A", 26);

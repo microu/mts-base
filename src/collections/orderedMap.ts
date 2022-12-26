@@ -1,4 +1,4 @@
-import { LinkedList } from "./linkedList";
+import { LinkedList } from "./linkedList.js";
 
 export class OrderedMap<K, V> implements Iterable<V> {
   list = new LinkedList<K>();
