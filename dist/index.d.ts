@@ -1,3 +1,5 @@
+declare const VERSION = "0.1.8";
+
 declare function characterList(firstChar: string, n: number): string;
 declare function characterList(firstChar: string, n: number, asArray: false): string;
 declare function characterList(firstChar: string, n: number, asArray: true): string[];
@@ -45,6 +47,4 @@ declare namespace toyData_d {
   };
 }
 
-declare const version = "mts-base: 0.1.4";
-
-export { stringUtils_d as stringUtils, toyData_d as toyData, version };
+export { VERSION, stringUtils_d as stringUtils, toyData_d as toyData };

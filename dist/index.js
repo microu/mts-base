@@ -1,3 +1,6 @@
+// version.ts
+const VERSION = "0.1.8";
+
 function characterList(firstChar, n, asArray = false) {
     const arr = Array.from(new Array(n), (_, i) => String.fromCharCode(firstChar.charCodeAt(0) + i));
     if (asArray) {
@@ -44,6 +47,4 @@ var toyData = /*#__PURE__*/Object.freeze({
     GREEK_ALPHABET_ARRAY: GREEK_ALPHABET_ARRAY
 });
 
-const version = "mts-base: 0.1.4";
-
-export { stringUtils, toyData, version };
+export { VERSION, stringUtils, toyData };
