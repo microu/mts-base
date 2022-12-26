@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
+    "build:version": "node scripts/build_version.js",
     "test": "jest"
   },
   "author": "Microu",
