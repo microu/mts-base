@@ -10,7 +10,8 @@
     "./collections": "./dist/collections.js"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "test": "jest"
   },
   "author": "Microu",
   "license": "MIT",
