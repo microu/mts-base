@@ -54,4 +54,6 @@ declare class OrderedMap<K, V> implements Iterable<V> {
     [Symbol.iterator](): Iterator<V>;
 }
 
-export { LinkedList, LinkedListNode, OrderedMap };
+declare function reduce<T, U>(rf: (r: U, x: T) => U, iter: Iterable<T>, initValue: U): U;
+
+export { LinkedList, LinkedListNode, OrderedMap, reduce };

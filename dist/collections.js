@@ -307,4 +307,12 @@ class OrderedMap {
     }
 }
 
-export { LinkedList, LinkedListNode, OrderedMap };
+function reduce(rf, iter, initValue) {
+    let u = initValue;
+    for (const x of iter) {
+        u = rf(u, x);
+    }
+    return u;
+}
+
+export { LinkedList, LinkedListNode, OrderedMap, reduce };
